@@ -22,7 +22,7 @@ export class Contract {
     this._abi = abi;
 
     this._functions = abi.filter(x => x.type === 'function');
-    const callFunctions = this._functions.filter(x => x.stateMutability === 'pure' || x.stateMutability === 'view');
+    const callFunctions = this._functions;
 
     for (const callFunction of callFunctions) {
       const { name } = callFunction;
